@@ -1,0 +1,21 @@
+/*
+*
+* Contexts
+* --------------------------------------------------
+*/
+
+.context-dark {
+	@include context-dark;
+}
+
+.context-dark-secondary {
+	@include context-dark-secondary;
+}
+
+.context-light {
+	@include context-light;
+}
+
+.context-primary {
+	@include context-primary;
+}

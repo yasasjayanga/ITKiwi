@@ -1,0 +1,216 @@
+//
+// Variables Custom
+// --------------------------------------------------
+
+@function random_color($start, $end) {
+	@return rgb( ($start+random($end - $start)), ($start+random($end - $start)), ($start+random($end - $start)) );
+}
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:    #000;
+
+$gray-dark-3:  #242425;
+$gray-dark-2:  #252c32;
+$gray-dark-1:  #292b2c;
+$gray-dark:    #2e2e2f;
+$gray:         #5d6062;
+$gray-light:   #888a8c;
+$gray-light-1: #999c9d;
+$gray-light-2: #adb0b1;
+$gray-light-3: #d9dadb;
+$gray-light-4: #ececec;
+$gray-light-5: #f4f4f4;
+
+$gray-2: #8d8d8f;
+$gray-3: #959799;
+$gray-4: #a3a6a7;
+
+$primary:                 #16c1c8;
+$primary-darken:          darken($primary,10%);
+$secondary:               #fadd3b;
+$secondary-darken:        #f9b516;
+
+$white:                   #fff;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff;
+//** Global text color on `<body>`.
+$text-color:            $gray;
+
+//** Global textual link color.
+$link-color:            $primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $primary-darken;
+//** Link active
+$link-press-color:      $primary-darken;
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Import fonts
+
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+$font-family-base:        "Roboto Slab";
+$font-family-sec:         "Montserrat";
+
+$material-design-icons:   "Material Design Icons";
+$material-design:         "material-design";
+$font-awesome:            "FontAwesome";
+
+
+// Template width (w/o units)
+$template-width:          2050;
+
+// Template width var for resizing
+$template-width-min:      ($template-width+1)*1px;
+$layout-boxed-width:      1920px;
+
+
+// Base FZ & LH (w/o units)
+$base-text-size:          16;
+$base-lh-size:            24;
+
+$base-vm-size:            (($base-text-size*100)/$template-width)*1vw;
+
+
+$font-size-base:          $base-text-size * 1px;
+$font-size-large:         ceil(($font-size-base * 1.25));
+$font-size-small:         ceil(($font-size-base * 0.85));
+
+$font-weight-base:        300;
+
+//PSD FZ headers /FOR EDIT (w/o units)
+$Size-h1:                 130;
+$Size-h2:                 90;
+$Size-h3:                 50;
+$Size-h4:                 20;
+$Size-h5:                 16;
+$Size-h6:                 14;
+
+//PSD LH headers /FOR EDIT (w/o units)
+$Lh-h1:                   120;
+$Lh-h2:                   100;
+$Lh-h3:                   60;
+$Lh-h4:                   30;
+$Lh-h5:                   30;
+$Lh-h6:                   20;
+
+
+//Calculating FZ headers
+$font-size-h1:            $Size-h1*1px;
+$font-size-h2:            $Size-h2*1px;
+$font-size-h3:            $Size-h3*1px;
+$font-size-h4:            $Size-h4*1px;
+$font-size-h5:            $Size-h5*1px;
+$font-size-h6:            $Size-h6*1px;
+
+
+//** line-height for headers /FOR EDIT
+// $font-lh-h_: floor((PSD l-h / $font-size-h1));
+
+$font-lh-h1:              ($Lh-h1 / $Size-h1);
+$font-lh-h2:              ($Lh-h2 / $Size-h2);
+$font-lh-h3:              ($Lh-h3 / $Size-h3);
+$font-lh-h4:              ($Lh-h4 / $Size-h4);
+$font-lh-h5:              ($Lh-h5 / $Size-h5);
+$font-lh-h6:              ($Lh-h6 / $Size-h6);
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        ($base-lh-size / $base-text-size); // l-h/fz-base
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-sec;
+$headings-font-weight:    700;
+$headings-line-height:    1.2;
+$headings-color:          $gray-dark;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+// Extra Large screen / 4k desktop
+$screen-xl:                  1800px;
+$screen-xl-min:              $screen-xl;
+$screen-xl-desktop:          $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1);
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+// Define media prefix
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+//== Flex Grid system
+//
+//## Define your custom flex responsive grid.
+
+$shell-width:         300px;
+$shell-xs-width:      480px;
+$shell-sm-width:      750px;
+$shell-md-width:      970px;
+$shell-lg-width:      1404px;
+$shell-xl-width:      1800px;
+
+$range-ws:            50px;
+$range-ws-sm:         30px;
+$range-ws-lg:         66px;
+
+$cell-count:          12;
+$cell-spacing:        50px;
+$cell-spacing-narrow: 10px;
+
+
+//== Shadows
+//
+//##
+
+$shadow-area-ambient: 0px 0px 1px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xxs: 1px 1px 1px rgba(0, 0, 0, 0.15);
+$shadow-area-xs: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-sm: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-md: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-lg: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xl: 0 12px 36px 0 rgba(0, 0, 0,.15);
